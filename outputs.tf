@@ -13,6 +13,6 @@ output "vlan_id" {
   value       = ovh_cloud_project_network_private.net.vlan_id
 }
 
-output "openstackID" {
+output "openstack_id" {
   value = one(ovh_cloud_project_network_private.net.regions_attributes[*].openstackid)
 }
