@@ -12,3 +12,7 @@ output "vlan_id" {
   description = "VLAN ID of the private network created."
   value       = ovh_cloud_project_network_private.net.vlan_id
 }
+
+output "openstackID" {
+  value = one(ovh_cloud_project_network_private.net.regions_attributes[*].openstackid)
+}
