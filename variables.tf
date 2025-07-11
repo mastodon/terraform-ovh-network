@@ -3,10 +3,10 @@ variable "project_id" {
   type        = string
 }
 
-variable "region" {
-  description = "Region in which to create the various resources."
-  type        = string
-  default     = "DE1"
+variable "regions" {
+  description = "Region(s) in which to create the various resources."
+  type        = list
+  default     = ["DE1"]
 }
 
 variable "network_name" {
@@ -28,4 +28,10 @@ variable "network_gateway_model" {
     condition     = contains(["s", "m", "l"], var.network_gateway_model)
     error_message = "Valid values for network_gateway_model are (s, m, l)"
   }
+}
+
+variable "network_gateway_region" {
+  description = "Specific region for the gateway. If none is given, takes the first region given in 'regions'"
+  type        = string
+  default     = ""
 }
