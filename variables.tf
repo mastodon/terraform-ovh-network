@@ -3,10 +3,10 @@ variable "project_id" {
   type        = string
 }
 
-variable "regions" {
+variable "region" {
   description = "Region(s) in which to create the various resources."
-  type        = list
-  default     = ["DE1"]
+  type        = string
+  default     = "DE1"
 }
 
 variable "network_name" {
