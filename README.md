@@ -7,12 +7,13 @@ Module to create a private virtual network in OVH's public cloud.
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
+| <a name="requirement_ovh"></a> [ovh](#requirement\_ovh) | ~> 2.5.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_ovh"></a> [ovh](#provider\_ovh) | 0.44.0 |
+| <a name="provider_ovh"></a> [ovh](#provider\_ovh) | 2.5.0 |
 
 ## Modules
 
