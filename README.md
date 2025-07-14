@@ -45,4 +45,5 @@ No modules.
 | <a name="output_id"></a> [id](#output\_id) | ID of the private network created. |
 | <a name="output_name"></a> [name](#output\_name) | Name of the private network created. |
 | <a name="output_openstack_id"></a> [openstack\_id](#output\_openstack\_id) | n/a |
+| <a name="output_subnet_id"></a> [subnet\_id](#output\_subnet\_id) | ID of the private subnet created. |
 | <a name="output_vlan_id"></a> [vlan\_id](#output\_vlan\_id) | VLAN ID of the private network created. |
