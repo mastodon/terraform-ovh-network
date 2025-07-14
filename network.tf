@@ -2,8 +2,8 @@ locals {
   gateway_name = "${var.network_name}-gateway"
 
   subnet_mask  = split("/", var.network_cidr)[1]
-  subnet_start = cidrhost(var.network_cidr, 2)
-  subnet_end   = cidrhost(var.network_cidr, pow(2, (32 - local.subnet_mask)) - 2)
+  subnet_start = var.network_start != null ? var.network_start : cidrhost(var.network_cidr, 2)
+  subnet_end   = var.network_end != null ? var.network_end : cidrhost(var.network_cidr, pow(2, (32 - local.subnet_mask)) - 2)
 }
 
 resource "ovh_cloud_project_network_private" "net" {

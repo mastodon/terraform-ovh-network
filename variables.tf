@@ -23,6 +23,33 @@ variable "network_name" {
 variable "network_cidr" {
   description = "Subnet to assign to the private network."
   type        = string
+
+  validation {
+    condition     = can(cidrnetmask(var.network_cidr))
+    error_message = "Must be a valid IPv4 CIDR."
+  }
+}
+
+variable "network_start" {
+  description = "Beginning of the IP range. Defaults to lowest valid value in network_cidr."
+  type        = string
+  default     = null
+
+  validation {
+    condition     = can(cidrnetmask("${var.network_start}/32"))
+    error_message = "Must be a valid IPv4 CIDR."
+  }
+}
+
+variable "network_end" {
+  description = "End of the IP range. Defaults to the highest valid value in network_cidr."
+  type        = string
+  default     = null
+
+  validation {
+    condition     = can(cidrnetmask("${var.network_end}/32"))
+    error_message = "Must be a valid IPv4 CIDR."
+  }
 }
 
 variable "network_gateway_model" {
