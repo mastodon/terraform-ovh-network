@@ -3,6 +3,12 @@ variable "project_id" {
   type        = string
 }
 
+variable "vlan_id" {
+  description = "VLAN ID to assign to this network."
+  type        = number
+  default     = 0
+}
+
 variable "region" {
   description = "Region(s) in which to create the various resources."
   type        = string

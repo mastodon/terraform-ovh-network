@@ -37,6 +37,7 @@ No modules.
 | <a name="input_network_name"></a> [network\_name](#input\_network\_name) | Name to give the private network. | `string` | n/a | yes |
 | <a name="input_project_id"></a> [project\_id](#input\_project\_id) | The ID of the Public Cloud project the resources will be created in. | `string` | n/a | yes |
 | <a name="input_region"></a> [region](#input\_region) | Region(s) in which to create the various resources. | `string` | `"DE1"` | no |
+| <a name="input_vlan_id"></a> [vlan\_id](#input\_vlan\_id) | VLAN ID to assign to this network. | `number` | `0` | no |
 
 ## Outputs
 
