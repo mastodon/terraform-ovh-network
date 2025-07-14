@@ -16,11 +16,12 @@ resource "ovh_cloud_project_network_private_subnet" "subnet" {
   service_name = var.project_id
   network_id   = ovh_cloud_project_network_private.net.id
 
-  region  = var.region
-  start   = local.subnet_start
-  end     = local.subnet_end
-  network = var.network_cidr
-  dhcp    = true
+  region     = var.region
+  start      = local.subnet_start
+  end        = local.subnet_end
+  network    = var.network_cidr
+  dhcp       = true
+  no_gateway = false
 
   depends_on = [ovh_cloud_project_network_private.net]
 }
