@@ -37,7 +37,7 @@ variable "network_start" {
 
   validation {
     condition     = can(cidrnetmask("${var.network_start}/32"))
-    error_message = "Must be a valid IPv4 CIDR."
+    error_message = "Must be a valid IPv4 address."
   }
 }
 
@@ -48,7 +48,7 @@ variable "network_end" {
 
   validation {
     condition     = can(cidrnetmask("${var.network_end}/32"))
-    error_message = "Must be a valid IPv4 CIDR."
+    error_message = "Must be a valid IPv4 address."
   }
 }
 
