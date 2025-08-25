@@ -36,7 +36,10 @@ variable "network_start" {
   default     = null
 
   validation {
-    condition     = can(cidrnetmask("${var.network_start}/32"))
+    condition = (
+      var.network_start == null ||
+      can(cidrnetmask("${var.network_start}/32"))
+    )
     error_message = "Must be a valid IPv4 address."
   }
 }
@@ -47,7 +50,10 @@ variable "network_end" {
   default     = null
 
   validation {
-    condition     = can(cidrnetmask("${var.network_end}/32"))
+    condition = (
+      var.network_end == null ||
+      can(cidrnetmask("${var.network_end}/32"))
+    )
     error_message = "Must be a valid IPv4 address."
   }
 }
