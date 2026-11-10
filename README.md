@@ -31,10 +31,11 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_dns_nameservers"></a> [dns\_nameservers](#input\_dns\_nameservers) | DNS servers to use for this network. | `list[string]` | <pre>[<br>  "0.0.0.0"<br>]</pre> | no |
+| <a name="input_dns_nameservers"></a> [dns\_nameservers](#input\_dns\_nameservers) | DNS servers to use for this network. | `list(string)` | <pre>[<br>  "0.0.0.0"<br>]</pre> | no |
 | <a name="input_network_cidr"></a> [network\_cidr](#input\_network\_cidr) | Subnet to assign to the private network. | `string` | n/a | yes |
 | <a name="input_network_description"></a> [network\_description](#input\_network\_description) | Description of the network. | `string` | `null` | no |
 | <a name="input_network_end"></a> [network\_end](#input\_network\_end) | End of the IP range. Defaults to the highest valid value in network\_cidr. | `string` | `null` | no |
+| <a name="input_network_gateway_description"></a> [network\_gateway\_description](#input\_network\_gateway\_description) | Description of the gateway | `string` | `""` | no |
 | <a name="input_network_gateway_model"></a> [network\_gateway\_model](#input\_network\_gateway\_model) | Size of the gateway to use for the private network. | `string` | `"s"` | no |
 | <a name="input_network_gateway_region"></a> [network\_gateway\_region](#input\_network\_gateway\_region) | Specific region for the gateway. If none is given, takes the first region given in 'regions' | `string` | `""` | no |
 | <a name="input_network_name"></a> [network\_name](#input\_network\_name) | Name to give the private network. | `string` | n/a | yes |

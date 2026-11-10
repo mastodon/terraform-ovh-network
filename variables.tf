@@ -87,6 +87,12 @@ variable "network_gateway_region" {
   default     = ""
 }
 
+variable "network_gateway_description" {
+  description = "Description of the gateway"
+  type        = string
+  default     = ""
+}
+
 variable "dns_nameservers" {
   description = "DNS servers to use for this network."
   type        = list(string)

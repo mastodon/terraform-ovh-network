@@ -35,6 +35,7 @@ resource "ovh_cloud_gateway" "gateway" {
   service_name = var.project_id
   name         = local.gateway_name
   region       = var.region
+  description  = var.network_gateway_description != "" ? var.network_gateway_description : null
 
   external_gateway = {
     enabled = true
