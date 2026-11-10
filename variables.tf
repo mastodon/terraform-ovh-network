@@ -90,5 +90,5 @@ variable "network_gateway_region" {
 variable "dns_nameservers" {
   description = "DNS servers to use for this network."
   type        = list[string]
-  default     = "0.0.0.0"
+  default     = ["0.0.0.0"]
 }
