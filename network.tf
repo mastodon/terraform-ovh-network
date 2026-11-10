@@ -1,7 +1,6 @@
 locals {
   gateway_name = "${var.network_name}-gateway"
 
-  subnet_name  = var.subnet_name != "" ? var.subnet_name : "subnet-${var.network_name}"
   subnet_mask  = split("/", var.network_cidr)[1]
 }
 
@@ -15,7 +14,7 @@ resource "ovh_cloud_network_private_vrack" "net" {
 resource "ovh_cloud_network_private_vrack_subnet" "subnet" {
   service_name = var.project_id
   network_id   = ovh_cloud_network_private_vrack.net.id
-  name         = local.subnet_name
+  name         = var.subnet_name
   description  = var.network_description
 
   region       = var.region
