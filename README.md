@@ -23,9 +23,9 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [ovh_cloud_project_gateway.gateway](https://registry.terraform.io/providers/ovh/ovh/latest/docs/resources/cloud_project_gateway) | resource |
-| [ovh_cloud_project_network_private.net](https://registry.terraform.io/providers/ovh/ovh/latest/docs/resources/cloud_project_network_private) | resource |
-| [ovh_cloud_project_network_private_subnet.subnet](https://registry.terraform.io/providers/ovh/ovh/latest/docs/resources/cloud_project_network_private_subnet) | resource |
+| [ovh_cloud_gateway.gateway](https://registry.terraform.io/providers/ovh/ovh/latest/docs/resources/cloud_gateway) | resource |
+| [ovh_cloud_network_private_vrack.net](https://registry.terraform.io/providers/ovh/ovh/latest/docs/resources/cloud_network_private_vrack) | resource |
+| [ovh_cloud_network_private_vrack_subnet.subnet](https://registry.terraform.io/providers/ovh/ovh/latest/docs/resources/cloud_network_private_vrack_subnet) | resource |
 
 ## Inputs
 
@@ -39,6 +39,7 @@ No modules.
 | <a name="input_network_start"></a> [network\_start](#input\_network\_start) | Beginning of the IP range. Defaults to lowest valid value in network\_cidr. | `string` | `null` | no |
 | <a name="input_project_id"></a> [project\_id](#input\_project\_id) | The ID of the Public Cloud project the resources will be created in. | `string` | n/a | yes |
 | <a name="input_region"></a> [region](#input\_region) | Region(s) in which to create the various resources. | `string` | `"DE1"` | no |
+| <a name="input_subnet_name"></a> [subnet\_name](#input\_subnet\_name) | Name of the subnet. | `string` | `""` | no |
 | <a name="input_vlan_id"></a> [vlan\_id](#input\_vlan\_id) | VLAN ID to assign to this network. | `number` | `0` | no |
 
 ## Outputs

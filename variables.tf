@@ -58,6 +58,12 @@ variable "network_end" {
   }
 }
 
+variable "subnet_name" {
+  description = "Name of the subnet."
+  type        = string
+  default     = ""
+}
+
 variable "network_gateway_model" {
   description = "Size of the gateway to use for the private network."
   type        = string
