@@ -70,7 +70,7 @@ variable "network_gateway_model" {
   default     = "s"
 
   validation {
-    condition     = contains(["s", "m", "l"], var.network_gateway_model)
+    condition     = contains(["S", "M", "L", "XL", "2XL", "3XL"], var.network_gateway_model)
     error_message = "Valid values for network_gateway_model are (s, m, l)"
   }
 }
