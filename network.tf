@@ -3,8 +3,6 @@ locals {
 
   subnet_name  = var.subnet_name != "" ? var.subnet_name : "subnet-${var.network_name}"
   subnet_mask  = split("/", var.network_cidr)[1]
-  subnet_start = var.network_start != null ? var.network_start : cidrhost(var.network_cidr, 2)
-  subnet_end   = var.network_end != null ? var.network_end : cidrhost(var.network_cidr, pow(2, (32 - local.subnet_mask)) - 2)
 }
 
 resource "ovh_cloud_network_private_vrack" "net" {
@@ -23,10 +21,10 @@ resource "ovh_cloud_network_private_vrack_subnet" "subnet" {
   cidr         = var.network_cidr
   dhcp_enabled = true
 
-  allocation_pools = [{
-    start = local.subnet_start
-    end   = local.subnet_end
-  }]
+  allocation_pools = var.network_start != "" ? [{
+    start = var.network_start
+    end   = var.network_end
+  }] : null
 
   depends_on = [ovh_cloud_network_private_vrack.net]
 }
