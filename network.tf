@@ -1,7 +1,7 @@
 locals {
   gateway_name = "${var.network_name}-gateway"
 
-  subnet_mask  = split("/", var.network_cidr)[1]
+  subnet_mask = split("/", var.network_cidr)[1]
 }
 
 resource "ovh_cloud_network_private_vrack" "net" {
