@@ -16,6 +16,7 @@ resource "ovh_cloud_network_private_vrack_subnet" "subnet" {
   service_name = var.project_id
   network_id   = ovh_cloud_network_private_vrack.net.id
   name         = local.subnet_name
+  description  = var.network_description
 
   region       = var.region
   cidr         = var.network_cidr
