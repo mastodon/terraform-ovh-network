@@ -31,7 +31,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_dns_nameservers"></a> [dns\_nameservers](#input\_dns\_nameservers) | DNS servers to use for this network. | `list(string)` | `[]` | no |
+| <a name="input_dns_nameservers"></a> [dns\_nameservers](#input\_dns\_nameservers) | DNS servers to use for this network. | `list(string)` | <pre>[<br>  "0.0.0.0"<br>]</pre> | no |
 | <a name="input_network_cidr"></a> [network\_cidr](#input\_network\_cidr) | Subnet to assign to the private network. | `string` | n/a | yes |
 | <a name="input_network_description"></a> [network\_description](#input\_network\_description) | Description of the network. | `string` | `null` | no |
 | <a name="input_network_end"></a> [network\_end](#input\_network\_end) | End of the IP range. Defaults to the highest valid value in network\_cidr. | `string` | `null` | no |
