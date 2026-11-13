@@ -21,7 +21,7 @@ resource "ovh_cloud_network_private_vrack_subnet" "subnet" {
   cidr         = var.network_cidr
   dhcp_enabled = true
 
-  dns_nameservers = var.dns_nameservers
+  dns_nameservers = length(var.dns_nameservers) > 0 ? var.dns_nameservers : null
 
   allocation_pools = var.network_start != "" ? [{
     start = var.network_start
