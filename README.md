@@ -23,22 +23,26 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [ovh_cloud_project_gateway.gateway](https://registry.terraform.io/providers/ovh/ovh/latest/docs/resources/cloud_project_gateway) | resource |
-| [ovh_cloud_project_network_private.net](https://registry.terraform.io/providers/ovh/ovh/latest/docs/resources/cloud_project_network_private) | resource |
-| [ovh_cloud_project_network_private_subnet.subnet](https://registry.terraform.io/providers/ovh/ovh/latest/docs/resources/cloud_project_network_private_subnet) | resource |
+| [ovh_cloud_gateway.gateway](https://registry.terraform.io/providers/ovh/ovh/latest/docs/resources/cloud_gateway) | resource |
+| [ovh_cloud_network_private_vrack.net](https://registry.terraform.io/providers/ovh/ovh/latest/docs/resources/cloud_network_private_vrack) | resource |
+| [ovh_cloud_network_private_vrack_subnet.subnet](https://registry.terraform.io/providers/ovh/ovh/latest/docs/resources/cloud_network_private_vrack_subnet) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_dns_nameservers"></a> [dns\_nameservers](#input\_dns\_nameservers) | DNS servers to use for this network. | `list(string)` | <pre>[<br>  "0.0.0.0"<br>]</pre> | no |
 | <a name="input_network_cidr"></a> [network\_cidr](#input\_network\_cidr) | Subnet to assign to the private network. | `string` | n/a | yes |
+| <a name="input_network_description"></a> [network\_description](#input\_network\_description) | Description of the network. | `string` | `null` | no |
 | <a name="input_network_end"></a> [network\_end](#input\_network\_end) | End of the IP range. Defaults to the highest valid value in network\_cidr. | `string` | `null` | no |
+| <a name="input_network_gateway_description"></a> [network\_gateway\_description](#input\_network\_gateway\_description) | Description of the gateway | `string` | `""` | no |
 | <a name="input_network_gateway_model"></a> [network\_gateway\_model](#input\_network\_gateway\_model) | Size of the gateway to use for the private network. | `string` | `"s"` | no |
 | <a name="input_network_gateway_region"></a> [network\_gateway\_region](#input\_network\_gateway\_region) | Specific region for the gateway. If none is given, takes the first region given in 'regions' | `string` | `""` | no |
 | <a name="input_network_name"></a> [network\_name](#input\_network\_name) | Name to give the private network. | `string` | n/a | yes |
 | <a name="input_network_start"></a> [network\_start](#input\_network\_start) | Beginning of the IP range. Defaults to lowest valid value in network\_cidr. | `string` | `null` | no |
 | <a name="input_project_id"></a> [project\_id](#input\_project\_id) | The ID of the Public Cloud project the resources will be created in. | `string` | n/a | yes |
 | <a name="input_region"></a> [region](#input\_region) | Region(s) in which to create the various resources. | `string` | `"DE1"` | no |
+| <a name="input_subnet_name"></a> [subnet\_name](#input\_subnet\_name) | Name of the subnet. | `string` | `""` | no |
 | <a name="input_vlan_id"></a> [vlan\_id](#input\_vlan\_id) | VLAN ID to assign to this network. | `number` | `0` | no |
 
 ## Outputs
@@ -47,6 +51,6 @@ No modules.
 |------|-------------|
 | <a name="output_id"></a> [id](#output\_id) | ID of the private network created. |
 | <a name="output_name"></a> [name](#output\_name) | Name of the private network created. |
-| <a name="output_openstack_id"></a> [openstack\_id](#output\_openstack\_id) | n/a |
 | <a name="output_subnet_id"></a> [subnet\_id](#output\_subnet\_id) | ID of the private subnet created. |
+| <a name="output_subnet_name"></a> [subnet\_name](#output\_subnet\_name) | Name of the private subnet created. |
 | <a name="output_vlan_id"></a> [vlan\_id](#output\_vlan\_id) | VLAN ID of the private network created. |
